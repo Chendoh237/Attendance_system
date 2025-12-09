@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Registration — FaceAttend</title>
+  <link rel="stylesheet" href="styles/common.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <h1>Student Registration</h1>
+      <p class="hint">Register and upload multiple photos for training (recommended).</p>
+    </header>
+
+    <section class="card">
+      <form id="studentForm" class="form-grid">
+        <div class="col">
+          <label>Full Name *</label>
+          <input id="fullName" name="fullName" required />
+        </div>
+
+        <div class="col">
+          <label>Matric Number *</label>
+          <input id="matric" name="matric" required />
+        </div>
+
+        <div class="col">
+          <label>Institution *</label>
+          <input id="institution" name="institution" required />
+        </div>
+
+        <div class="col">
+          <label>Faculty / Department *</label>
+          <input id="faculty" name="faculty" required />
+        </div>
+
+        <div class="col">
+          <label>Program (optional)</label>
+          <input id="program" name="program" />
+        </div>
+
+        <div class="col">
+          <label>Email *</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+
+        <div class="col">
+          <label>Phone (optional)</label>
+          <input id="phone" name="phone" />
+        </div>
+
+        <div class="col">
+          <label>Gender (optional)</label>
+          <select id="gender" name="gender">
+            <option value="">Prefer not to say</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <!-- File uploads -->
+        <div class="col full">
+          <label>Upload photos (multiple) — 3 to 10 recommended *</label>
+          <input id="fileInput" type="file" accept="image/*" multiple />
+          <small class="hint">Or use the camera below to capture photos.</small>
+        </div>
+
+        <!-- Webcam capture -->
+        <div class="col full">
+          <label>Webcam — Capture photos</label>
+          <div class="camera">
+            <video id="video" autoplay playsinline></video>
+            <canvas id="captureCanvas" hidden></canvas>
+            <div class="camera-controls">
+              <button id="captureBtn" type="button">Capture Photo</button>
+              <button id="clearPhotos" type="button" class="danger">Clear Photos</button>
+              <span id="photoCount">0 photos</span>
+            </div>
+            <div id="thumbs" class="thumbs"></div>
+          </div>
+        </div>
+
+        <div class="col full">
+          <button id="submitBtn" class="primary" type="submit">Submit Registration</button>
+        </div>
+
+        <div class="col full small">
+          <p><strong>Privacy:</strong> Photos are used only for attendance recognition. Contact admin to delete your data.</p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="scripts/student.js"></script>
+</body>
+</html>

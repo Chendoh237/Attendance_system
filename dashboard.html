@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Dashboard</title>
+
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2 class="logo">FaceAttend</h2>
+        <ul class="menu">
+            <li class="active">Dashboard</li>
+            <li>Students</li>
+            <li>Attendance Logs</li>
+            <li>Settings</li>
+            <li id="logoutBtn">Logout</li>
+        </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="header">
+            <h2>Dashboard</h2>
+            <div class="user">
+                <span id="usernameDisplay">User</span>
+                <img src="https://i.ibb.co/y6Pq7DP/user.png" alt="user">
+            </div>
+        </header>
+
+        <!-- WELCOME BANNER -->
+        <section class="welcome">
+            <h3>Welcome back, <span id="welcomeName">User</span> 👋</h3>
+            <p>Your smart facial-recognition attendance system is running smoothly.</p>
+        </section>
+
+        <!-- STAT CARDS -->
+        <section class="stats">
+            <div class="card">
+                <h4>Total Students</h4>
+                <p id="totalStudents">0</p>
+            </div>
+
+            <div class="card">
+                <h4>Present Today</h4>
+                <p id="presentToday">0</p>
+            </div>
+
+            <div class="card">
+                <h4>Absent Today</h4>
+                <p id="absentToday">0</p>
+            </div>
+        </section>
+
+        <!-- ATTENDANCE TABLE -->
+        <section class="table-section">
+            <h3>Today's Attendance</h3>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Matric No</th>
+                        <th>Time In</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="attendanceTable">
+                    <!-- JS loads rows here -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>

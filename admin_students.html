@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Students — Admin</title>
+  <link rel="stylesheet" href="styles/common.css" />
+  <link rel="stylesheet" href="styles/admin.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="topbar"><h1>Students</h1></header>
+
+    <section class="card">
+      <div style="display:flex; gap:8px; align-items:center; margin-bottom:12px;">
+        <button id="refreshStudents" class="primary">Refresh</button>
+        <button id="addStudent" class="primary">Add Student</button>
+      </div>
+
+      <table id="studentsList" class="simple-table">
+        <thead><tr><th>Name</th><th>Matric</th><th>Dept</th><th>Email</th><th>Photos</th><th>Actions</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Add student modal (simple prompt-based fallback) -->
+  <script src="scripts/admin_students.js"></script>
+</body>
+</html>

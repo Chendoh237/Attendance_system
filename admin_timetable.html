@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Timetable Editor — Admin</title>
+  <link rel="stylesheet" href="/styles/common.css" />
+  <link rel="stylesheet" href="styles/admin.css" />
+  <style>
+    .days { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+    .day-btn { padding:8px 12px; background:#0f1724; color:#fff; border-radius:8px; cursor:pointer; }
+    .day-btn.active { background:#2346ff; }
+    .slots { margin-top:12px; display:flex; flex-direction:column; gap:8px; }
+    .slot { padding:10px; background:rgba(255,255,255,0.03); border-radius:8px; display:flex; gap:10px; align-items:center; }
+    .slot .meta { flex:1 }
+    .small { font-size:0.85rem; color:#98a0b3 }
+    .controls { display:flex; gap:8px; align-items:center; }
+    .form-inline { display:flex; gap:8px; align-items:center; margin-top:8px; flex-wrap:wrap }
+    input[type="time"]{padding:8px;border-radius:6px;background:#071427;border:none;color:#fff}
+    input[type="text"]{padding:8px;border-radius:6px;background:#071427;border:none;color:#fff}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <h1>Timetable Editor</h1>
+      <p class="hint">Select department and edit its weekly slots (breaks + classes).</p>
+    </header>
+
+    <section class="card">
+      <div style="display:flex; gap:12px; align-items:center;">
+        <label>Department</label>
+        <select id="deptSelect"></select>
+        <button id="newDeptBtn" class="primary">New Dept</button>
+        <button id="saveScheduleBtn" class="primary">Save Schedule</button>
+      </div>
+
+      <div class="days" id="daysRow"></div>
+
+      <div id="slotsContainer">
+        <h3 id="selectedDayTitle"></h3>
+        <div class="slots" id="slotsList"></div>
+
+        <div class="form-inline">
+          <select id="slotType"><option value="class">Class</option><option value="break">Break</option></select>
+          <input id="courseCode" placeholder="Course code (eg. CSC201)" />
+          <input id="courseName" placeholder="Course name" />
+          <input id="startTime" type="time" />
+          <input id="endTime" type="time" />
+          <button id="addSlot" class="primary">Add Slot</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts/admin_timetable.js"></script>
+</body>
+</html>
